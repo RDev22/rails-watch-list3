@@ -1,5 +1,10 @@
 <div class="container">
   <h1><%= @list.name %></h1>
+  <% if @list.photo.attached? %>
+    <%= cl_image_tag @list.photo.key, width: 150 %>
+  <% else %>
+    <%= image_tag 'cinema.jpg', width: 150 %>
+  <% end %>
 </div>
 
 <h2>Movies</h2>
